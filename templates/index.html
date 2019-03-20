@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your RSS News Feed</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+</head>
+<body>
+	<main>
+		<h1>Latest Updates From Your RSS Feeds</h1>
+		{% for article in articles %}
+		<article>
+			<h1>
+				<a href="/read/{{ article.sid }}">{{ article.title }}</a>
+			</h1>
+			<div class="source">
+				From
+				<a href="{{ article.feed_source.link }}">{{ article.feed_source.title }}</a>
+			</div>
+			<div class="added">
+				{{ article.created_at }}
+			</div>
+			<div class="body">
+				{% autoescape off %}{{ article.body }}{% endautoescape %}
+			</div>
+		</article>
+		{% endfor %}
+	</main>
+</body>
+</html>

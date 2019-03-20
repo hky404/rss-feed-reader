@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Feed Sources</title>
+</head>
+<body>
+	<form method="POST">
+		<input type="" name="feed">
+		<button type="submit">Add feed</button>
+	</form>
+	{% for feed_source in feed_sources %}
+		<div>
+			<a href="{{ feed_source.link }}">{{ feed_source.title }}</a>
+		</div>
+	{% endfor %}
+
+</body>
+</html>
