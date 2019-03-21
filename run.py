@@ -19,7 +19,7 @@ def update_loop():
                     update_source(src)
                 except:
                     continue
-        time.sleep(60 * 15)
+        time.sleep(60 * 60)
 
 
 def update_source(src):
